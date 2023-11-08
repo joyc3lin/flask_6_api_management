@@ -29,18 +29,45 @@ In this case, the app route name is "hello" and the url should look like "".clou
 
 ![flaskapp2](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/flaskapp2.png)
 
-
 # Azure API deployment
+
++ Instructions for deployment to Azure can be found [here](https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?tabs=linux%2Cbash%2Cazure-cli&pivots=python-mode-decorators)
++ First, install Azure CLI in the terminal with <code>curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash</code>
+  + This may take a while to download
++ To test if Azure has been installed, use: <code>az</code>
++ Log into Azure with: <code>az login --use-device-code</code>
++ Select URL provided
++ Copy paste code provided in the same line as URL
++ Pick an account
++ Select "Yes" to the prompt "Are you trying to sign in to Microsoft Azure CLI?"
++ Install the Core Tools package in terminal with: <code>sudo apt-get install azure-functions-core-tools-4</code>
+  + also <code>pip install azure-functions</code>
+
+**Creating Function Project**
+
++ Create a new function project with: <code>func init [name-of-project] --python -m V2</code>
++ <code>cd [name-of-project]</code> into the project folder
++ The folder will come with files such as <code>local.settings.json</code>,  <code>function_app.py</code>, and <code>.gitignore</code>
+  + <code>local.settings.json</code> contains important configuration information and has been placed into the <code>.gitignore</code> file and won't show in a GitHub Repository
+  + <code>function_app.py</code> is where the code for the azure app will he held
++ To start, go to <code>function_app.py</code> and replace the code with:
+
+```python
+import azure.functions as func
+
+app = func.FunctionApp()
+
+@app.function_name(name="HttpExample")
+@app.route(route="hello")
+def test_function(req: func.HttpRequest) -> func.HttpResponse:
+    return func.HttpResponse("HttpExample function processed a request!")
+```
++ The code can then be edited for personalization: [function_app.py](https://github.com/joyc3lin/flask_6_api_management/blob/main/myapp/function_app.py)
 
 # OpenAPI Specification and Documentation
 
 + create function func init LocalFunctionProj --python -m V2
-+ install core packages tool: sudo apt-get install azure-functions-core-tools-4
-+ pip install azure-functions
-+ install azure cli: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-(might take a while to download)
-+ test install with az
-+ login with: az login --use-device-code
+
 
 To connect to azure storage account: 
 + create a azure atorage acc
