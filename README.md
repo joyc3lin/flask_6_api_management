@@ -101,7 +101,7 @@ _Replace [APP_NAME] with selected name for the function app that will also show 
 
 **Deploying Project to Azure**
 
-+ 
++ To r
 # OpenAPI Specification and Documentation
 
 + create function func init LocalFunctionProj --python -m V2
