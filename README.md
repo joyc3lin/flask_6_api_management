@@ -77,21 +77,27 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
 ```python
 az group create --name [RESOURCE_GROUP_NAME] --location [REGION]
 ```
-Replace [RESOURCE_GROUP_NAME] and [REGION] with selected name and location
+_Replace [RESOURCE_GROUP_NAME] and [REGION] with selected name and location_
+
+</br>
 
 + Then, create a storage account within the resource group and region with:
 
 ```python
 az storage account create --name [STORAGE_NAME] --location [REGION] --resource-group [RESOURCE_GROUP_NAME] --sku Standard_LRS
 ```
-Replace [STORAGE_GROUP] with selected name for storage container 
+_Replace [STORAGE_GROUP] with selected name for storage container_
+
+</br>
 
 + Lastly, create a function app with:
 
 ```python
 az functionapp create --resource-group [RESOURCE_GROUP_NAME] --consumption-plan-location [REGION] --runtime python --runtime-version 3.9 --functions-version 4 --name [APP_NAME] --os-type linux --storage-account [STORAGE_NAME]
 ```
-Replace [APP_NAME] with selected name for the function app that will also show in the app's URL
+_Replace [APP_NAME] with selected name for the function app that will also show in the app's URL_
+
+</br>
 
 **Deploying Project to Azure**
 
