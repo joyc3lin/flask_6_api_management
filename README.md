@@ -34,7 +34,7 @@ In this case, the app route name is "hello" and the url should look like "".clou
 # OpenAPI Specification and Documentation
 
 + To access Swagger documentation, enter "apidocs" after ".cloudshell.dev/"
-+ The URL will then lead to a page titled "A swagger API" and below, list of the possible requests a user can make of the endpoint
++ The URL will then lead to a page titled "A swagger API" and below, a list of the possible requests a user can make of the endpoint
 
 ![swagger](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/swagger.png)
 
@@ -77,6 +77,15 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
 + The code can then be edited for personalization: [function_app.py](https://github.com/joyc3lin/flask_6_api_management/blob/main/myapp/function_app.py)
 + Ensure that in <code>local.settings.json</code>, <code>AzureWebJobsFeatureFlags</code> has been set to <code>EnableWorkerIndexing</code>
 + Also in <code>local.settings.json</code>, update so that <code>AzureWebJobsStorage</code> has been set to <code>"UseDevelopmentStorage=true"</code>
+
++ To test if the function has been successfully set up, enter into the terminal <code>func start</code> which returns:
+
+![funcstart](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/funcstart.png)
+
++ The link will then lead to a new browser page that should confirm the Functions app is running
+
+![apprunning](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/apprunning.png)
+
 
 </br>
 
@@ -124,16 +133,8 @@ My azure app link: https://joyceazureapp.azurewebsites.net/api/greeting
 
 </br>
 
-
-To connect to azure storage account: 
-+ create a azure atorage acc
-+ under securty + access, access keys 
-+ copy conenction string into local.setting.json "AzureWebJobsStorage"
-
-
 # Errors
 
-flasgger: had to play around with parameters to get it to work otherwise the variables would show up as undefined and could not be edited
-+ An error occurred trying to start process 'xdg-open' with working directory '/home/joyce_lin_1/flask_6_api_management/myapp'. No such file or directory
++ _Running Function Project_: An error occurred trying to start process 'xdg-open' with working directory '/home/joyce_lin_1/flask_6_api_management/myapp'. No such file or directory
 + 
 + app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS): anon makes it so anyone can access, function means it needs authentication 
