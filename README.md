@@ -41,7 +41,6 @@ In this case, the app route name is "hello" and the url should look like "".clou
 + Pick an account
 + Select "Yes" to the prompt "Are you trying to sign in to Microsoft Azure CLI?"
 + Install the Core Tools package in terminal with: <code>sudo apt-get install azure-functions-core-tools-4</code>
-  + also <code>pip install azure-functions</code>
 
 </br>
 
@@ -101,10 +100,22 @@ _Replace [APP_NAME] with selected name for the function app that will also show 
 
 **Deploying Project to Azure**
 
-+ To r
++ To deploy, enter in terminal: <code>func azure functionapp publish [APP_NAME]</code>
++ This will then provide an "azurewebsites" link that will lead to the function app
+
+My azure app link: https://joyceazureapp.azurewebsites.net/api/greeting
+
+![azureapp1](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/azureapp.png)
+
++ The URL can also be edited like with the flask app
+
+![azureapp2](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/azureapp2.png)
+
+
+  
 # OpenAPI Specification and Documentation
 
-+ create function func init LocalFunctionProj --python -m V2
+
 
 
 To connect to azure storage account: 
@@ -112,7 +123,6 @@ To connect to azure storage account:
 + under securty + access, access keys 
 + copy conenction string into local.setting.json "AzureWebJobsStorage"
 
-+ https://joyceazureapp.azurewebsites.net/api/greeting
 
 # Errors
 
