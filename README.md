@@ -75,9 +75,9 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
 + First, create an Azure resource group with:
 
 ```python
-az group create --name <name of resource group> --location <REGION>
+az group create --name [name of resource group] --location [REGION]
 ```
-Replace <name of resource group> and <REGION> with selected name and location
+Replace [name of resource group] and [REGION] with selected name and location
 
 + Then, create a storage account within the resource group and region 
 
