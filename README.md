@@ -10,7 +10,7 @@ The goal of this week's assignment is to develop, document, and manage APIs usin
 
 + Enter the directory where the python file is contained
 + Ensure FLask and Flasgger are installed
-+ In terminal, enter <code>python [file-name].py</code>
++ In the terminal, enter <code>python [file-name].py</code>
 + Click the link that generates that will lead to a new browswer tab
 + In the URL of the new tab, replace the part after ".cloudshell.dev/" with the app route name specified in the python file followed by a "?".
 
@@ -20,6 +20,15 @@ For example:
 @app.route('/hello', methods=['GET'])
 ```
 In this case, the app route name is "hello" and the url should look like "".cloudshell.dev/hello?"
+
++ This should return something like this:
+
+![flaskapp1](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/flaskapp1.png)
+
++ To add other arguments in the URL after the "?", input the name of the argument, an equals sign, and then your input. To add more than one argument, separate the individual arguments with a "&" sign:
+
+![flaskapp2](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/flaskapp2.png)
+
 
 # Azure API deployment
 
