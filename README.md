@@ -43,6 +43,8 @@ In this case, the app route name is "hello" and the url should look like "".clou
 + Install the Core Tools package in terminal with: <code>sudo apt-get install azure-functions-core-tools-4</code>
   + also <code>pip install azure-functions</code>
 
+</br>
+
 **Creating Function Project**
 
 + Create a new function project with: <code>func init [name-of-project] --python -m V2</code>
@@ -63,6 +65,21 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
     return func.HttpResponse("HttpExample function processed a request!")
 ```
 + The code can then be edited for personalization: [function_app.py](https://github.com/joyc3lin/flask_6_api_management/blob/main/myapp/function_app.py)
++ Ensure that in <code>local.settings.json</code>, <code>AzureWebJobsFeatureFlags</code> has been set to <code>EnableWorkerIndexing</code>
++ Also in <code>local.settings.json</code>, update so that <code>AzureWebJobsStorage</code> has been set to <code>"UseDevelopmentStorage=true"</code>
+
+</br>
+
+**To Create Azure Resources**
+
++ First, create an Azure resource group with:
+
+```python
+az group create --name <name of resource group> --location <REGION>
+```
+Replace <name of resource group> and <REGION> with selected name and location
+
++ Then, create a storage account within the resource group and region 
 
 # OpenAPI Specification and Documentation
 
