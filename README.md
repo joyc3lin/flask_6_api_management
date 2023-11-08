@@ -6,10 +6,10 @@ The goal of this week's assignment is to develop, document, and manage APIs usin
 + In Google Cloud Shell, create a python file with code take from the Professor's [app_flasgger.py](https://github.com/hantswilliams/HHA_504_2023/blob/main/WK6/code/flask/app_flasgger.py) file.
 + Edit code for personalization: [main.py](https://github.com/joyc3lin/flask_6_api_management/blob/main/main.py)
 
-**To Run Flask-App**
+**To Run Flask Endpoint**
 
 + Enter the directory where the python file is contained
-+ Ensure FLask and Flasgger are installed
++ Ensure Flask and Flasgger are installed
 + In the terminal, enter <code>python [file-name].py</code>
 + Click the link that generates that will lead to a new browswer tab
 + In the URL of the new tab, replace the part after ".cloudshell.dev/" with the app route name specified in the python file followed by a "?".
@@ -28,6 +28,17 @@ In this case, the app route name is "hello" and the url should look like "".clou
 + To add other arguments in the URL after the "?", input the name of the argument, an equals sign, and then your input. To add more than one argument, separate the individual arguments with a "&" sign:
 
 ![flaskapp2](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/flaskapp2.png)
+
+</br>
+
+# OpenAPI Specification and Documentation
+
++ To access Swagger documentation, enter "apidocs" after ".cloudshell.dev/"
++ The URL will then lead to a page titled "A swagger API" and below, list of the possible requests a user can make of the endpoint
+
+![swagger](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/swagger.png)
+
+</br>
 
 # Azure API deployment
 
@@ -111,11 +122,7 @@ My azure app link: https://joyceazureapp.azurewebsites.net/api/greeting
 
 ![azureapp2](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/azureapp2.png)
 
-
-  
-# OpenAPI Specification and Documentation
-
-
+</br>
 
 
 To connect to azure storage account: 
