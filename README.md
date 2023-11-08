@@ -82,10 +82,9 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
 
 ![funcstart](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/funcstart.png)
 
-+ The link will then lead to a new browser page that should confirm the Functions app is running
++ The "localhost" link will then lead to a new browser page that should confirm the Functions app is running
 
 ![apprunning](https://github.com/joyc3lin/flask_6_api_management/blob/main/screenshots/apprunning.png)
-
 
 </br>
 
@@ -135,6 +134,19 @@ My azure app link: https://joyceazureapp.azurewebsites.net/api/greeting
 
 # Errors
 
-+ _Running Function Project_: An error occurred trying to start process 'xdg-open' with working directory '/home/joyce_lin_1/flask_6_api_management/myapp'. No such file or directory
-+ 
-+ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS): anon makes it so anyone can access, function means it needs authentication 
++ _Running <code>func start</code>_: An error occurred trying to run <code>func start</code> that says theres an error running the process 'xdg-open' with working directory and that there is no such file or directory. This was solved by running <code>sudo apt-get install xdg-utils</code> in the terminal and installing xdg-utils.
+
+</br>
+
++ _Launching azure app_: After publishing the app with <code>func azure functionapp publish [APP_NAME]</code>, the URL link leads to a 401 error page. The app is functional on Azure but there was an issue with connecting to the app from the client side. This was fixed in the <code>function_app.py</code> on the code line:
+  
+```python
+app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+```
+
+The line had originally been: 
+
+```python
+app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
+```
+The authentication level being set to function means that there needs to be authentication before a client can access the app. Setting the level to anonymous makes it so anyone can access the app without needing permission. 
